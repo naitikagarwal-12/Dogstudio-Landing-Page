@@ -1,0 +1,175 @@
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "GtSectra"; 
+  src: url("./assets/GTSectraDisplay-Bold.woff2")
+}
+
+@theme {
+  --font-gt-sectra: "GtSectra", sans-serif;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: black;
+  overflow-x: hidden;
+}
+
+main {
+  position: relative
+}
+
+#canvas-elem::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute; 
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-image: url(/background/bg-2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 0.4s ease;
+}
+
+.group i {
+  transition: transform 0.5s linear;
+}
+
+.group:hover i { 
+  transform: translateX(4px);
+}
+
+.images {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    transition: all 0.4s linear;
+  }
+}
+
+section {
+  min-height: 100vh; 
+  position: relative; 
+}
+
+#social {
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+#social:hover{
+  opacity: 0.5;
+}
+
+#section-1 {  
+  padding: 3.2rem 3rem;  
+  z-index: 2;
+}
+
+#section-2 {
+  padding: 0.5rem 3rem;
+  z-index: 2;
+}
+
+#section-3 {
+  padding: 3rem 16rem;  
+  padding-bottom: 0rem;  
+}
+ 
+.line {
+  transform-origin: right; 
+  transition: transform 0.3s ease;
+}
+
+.discover:hover .line { 
+  transform: scaleX(0.82)
+}
+
+.title {
+  display: flex;
+  gap: 4rem;
+  opacity: 0.2;
+  padding: 1.5rem 0rem;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+
+.title:hover {
+  opacity: 1;
+}
+
+.col1 {
+  width: 9rem; 
+  font-size: 10px;
+  text-align: right; 
+}
+
+.heading {
+  display: flex;
+  gap: 4rem;
+  opacity: 0.2;
+  padding: 2rem 0rem;
+  font-size: 10px;
+}
+
+.hide-bg #canvas-elem::after {
+  opacity: 0;
+}
+
+main:has(#section-2 .title:hover) #canvas-elem::after{
+  opacity: 0;
+}
+
+main:has(#section-2 .title[img-title= "tomorrowland"]:hover) #tomorrowland {
+  background-color: rgb(13, 13, 41);
+  opacity: 1;
+}
+
+main:has(#section-2 .title[img-title= "navy-pier"]:hover) #navy-pier {
+  background-color: rgb(13, 13, 41);
+  opacity: 1;
+}
+
+main:has(#section-2 .title[img-title= "msi"]:hover) #msi {
+  background-color: rgb(13, 13, 41);
+  opacity: 1;
+}
+
+main:has(#section-2 .title[img-title= "phone"]:hover) #phone {
+  background-color: rgb(13, 13, 41);
+  opacity: 1;
+}
+
+main:has(#section-2 .title[img-title= "kikk"]:hover) #kikk {
+  background-color: rgb(3, 3, 109);
+  opacity: 1;
+}
+
+main:has(#section-2 .title[img-title= "kennedy"]:hover) #kennedy {
+  background-color: rgba(5, 88, 68, 0.514);
+  opacity: 1;
+}
+
+main:has(#section-2 .title[img-title= "opera"]:hover) #opera {
+  background-color: rgb(105, 3, 3);
+  opacity: 1;
+}
+
+@import "tailwindcss"
